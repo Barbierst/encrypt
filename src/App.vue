@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/caesar">Caesar</router-link>
+      <router-link to="/vigenere">Vigenere</router-link>
     </div>
     <div id="content">
       <router-view/>
@@ -37,7 +38,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #c1c1c1;
+  background-color: #2f2f2f;
 }
 
 #nav a{

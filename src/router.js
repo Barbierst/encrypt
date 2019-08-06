@@ -23,6 +23,12 @@ export default new Router({
       path: '/caesar',
       name: 'caesar',
       component: () => import('./views/Caesar.vue')
+    },
+    {
+      path: '/vigenere',
+      name: 'vigenere',
+      component: () => import('./views/Vigenere.vue')
     }
+
   ]
 })

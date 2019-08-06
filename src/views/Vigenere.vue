@@ -1,14 +1,16 @@
 <template>
     <div class="page">
         <h1> {{title}}</h1>
-        <p><i>In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</i> - <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">Wikipedia</a></p>
+        <p><i>The Vigenère cipher (French pronunciation: ​[viʒnɛːʁ]) is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It employs a form of polyalphabetic substitution.<br/><br/>
+
+First described by Giovan Battista Bellaso in 1553, the cipher is easy to understand and implement, but it resisted all attempts to break it until 1863, three centuries later. This earned it the description le chiffre indéchiffrable (French for 'the indecipherable cipher'). Many people have tried to implement encryption schemes that are essentially Vigenère ciphers.[3] In 1863, Friedrich Kasiski was the first to publish a general method of deciphering Vigenère ciphers.</i> - <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" target="_blank">Wikipedia</a></p>
         <div id="ceasar">
             <div class="input">
                 <textarea v-model="input"></textarea>
             </div>
             <div class="controls">
                     <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
-                    <input type="number" min="0" max="15" v-model="key"> 
+                    <input type="text" v-model="key"> 
                     <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
             </div>
             <div class="output">
@@ -28,13 +30,13 @@ library.add(faLock, faUnlock)
 library.add(faSpinner, faAlignLeft)
 
 export default {
-    name: 'Caesar',
+    name: 'Vigenere',
     data() {
         return {
-            title: 'Caesar cypher',
+            title: 'Vigenere cypher',
             input: 'Type the text you want to encrypt',
             output: 'Uzqf uif ufyu zpv xbou up fodszqu',
-            key: 1
+            key: 'keyword'
         }
     },
     methods: {
@@ -113,12 +115,11 @@ textarea {
 }
 
 input {
-    font-size:1.2em;
+    font-size:0.8em;
     border: none;
     outline: none;
     resize: none;
-    width: 3vw;
-    border-radius: 30%;
+    width: 10vw;
     text-align: center;
 }
 
