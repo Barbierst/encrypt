@@ -18,9 +18,6 @@
     padding: 0;
 }
 
-h1 {
-  padding: 20px;
-}
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -33,7 +30,7 @@ h1 {
 #nav { 
   margin: 0;
   position: fixed;
-  width: 17vw;
+  width: 10vw;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -43,10 +40,26 @@ h1 {
   background-color: #c1c1c1;
 }
 
+#nav a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 #content {
   background-color: #f4f4f4;
   height: 100vh;
-  margin-left: 17vw;
-  padding: 50px;
+  margin-left: 10vw;
 }
+
+.page { 
+  padding: 5vh;
+}
+
+h1 {
+  margin: 20px;
+}
+
+
 </style>
