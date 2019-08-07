@@ -9,9 +9,9 @@ First described by Giovan Battista Bellaso in 1553, the cipher is easy to unders
                 <textarea v-model="input"></textarea>
             </div>
             <div class="controls">
-                    <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
+                    <!-- <font-awesome-icon :icon="['fas', 'lock']" @click="vigenereEncrypt"/> -->
                     <input type="text" v-model="key"> 
-                    <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
+                    <!-- <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" /> -->
             </div>
             <div class="output">
                 <textarea v-model="output"></textarea>
@@ -40,45 +40,40 @@ export default {
         }
     },
     methods: {
-        encrypt() {
-            let str = this.input;
-            let amount = parseInt(this.key);
-            let out= '';
-            for (let i = 0; i < str.length; i++) {
-                let number = str.charCodeAt(i);
-                console.log(number)
+        // vigenereEncrypt() {
+        //     let key = this.key;
+        //     let text = this.input;
+        //     let out ='';
+        //     let length = text.length;
+        //     for (let i = 0; i < length ; i++) {
+        //         let number = str.charCodeAt(i);
+        //         if (number >= 97 && number <= 122) {
+        //             number = (((number + amount) - 97)%26) + 97;
+        //         } else if (number >= 65 && number <= 90){
+        //             number = (((number + amount) - 65)%26) + 65;
+        //         }
 
-                if (number >= 97 && number <= 122) {
-                number = (((number + amount) - 97)%26) + 97;
-                } else if (number >= 65 && number <= 90){
-                number = (((number + amount) - 65)%26) + 65;
-                }
+        //         let char = String.fromCharCode(number);
+        //         out += char;
+        //     }
 
-            let char = String.fromCharCode(number);
-            out += char;
-            }
-            this.output = out;
-        },
-        decrypt() {
-            let str = this.output;
-            let amount = parseInt(this.key);
-            let out= '';
-            for (let i = 0; i < str.length; i++) {
-                let number = str.charCodeAt(i);
-                console.log(number)
-
-                if (number >= 97 && number <= 122) {
-                number = (((number - amount) - 97 + 26)%26) + 97;
-                } else if (number >= 65 && number <= 90){
-                number = (((number - amount) - 65 + 26)%26) + 65;
-                }
-
-            let char = String.fromCharCode(number);
-            out += char;
-            }
-            this.input = out;
-        }
+        //     this.output = out;
+        // }
     }
+}
+
+function ordA(a) {
+  return a.charCodeAt(0) - 65;
+}
+ 
+// vigenere
+function vigenere(text, key, decode) {
+  var i = 0, b;
+  key = key.toUpperCase().replace(/[^A-Z]/g, '');
+  return text.toUpperCase().replace(/[^A-Z]/g, '').replace(/[A-Z]/g, function(a) {
+    b = key[i++ % key.length];
+    return String.fromCharCode(((ordA(a) + (decode ? 26 - ordA(b) : ordA(b))) % 26 + 65));
+  });
 }
 
 </script>

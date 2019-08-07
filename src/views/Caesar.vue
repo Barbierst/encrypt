@@ -44,8 +44,6 @@ export default {
             let out= '';
             for (let i = 0; i < str.length; i++) {
                 let number = str.charCodeAt(i);
-                console.log(number)
-
                 if (number >= 97 && number <= 122) {
                 number = (((number + amount) - 97)%26) + 97;
                 } else if (number >= 65 && number <= 90){
@@ -63,8 +61,6 @@ export default {
             let out= '';
             for (let i = 0; i < str.length; i++) {
                 let number = str.charCodeAt(i);
-                console.log(number)
-
                 if (number >= 97 && number <= 122) {
                 number = (((number - amount) - 97 + 26)%26) + 97;
                 } else if (number >= 65 && number <= 90){
