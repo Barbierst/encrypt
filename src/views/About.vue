@@ -1,5 +1,17 @@
 <template>
   <div class="page">
-    <h1>This is an about page</h1>
+    <Intro />
   </div>
 </template>
+
+<script>
+import Intro from '../components/Intro' 
+export default {
+  name: 'about',
+  components: {
+    Intro
+  }
+  
+}
+</script>
+
