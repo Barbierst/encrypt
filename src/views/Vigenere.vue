@@ -35,7 +35,7 @@ export default {
         return {
             title: 'Vigenere cypher',
             input: 'Type the text you want to encrypt',
-            output: 'Uzqf uif ufyu zpv xbou up fodszqu',
+            output: '3CNA Kko RALK IsS KrqD RK vqmvWLH',
             key: 'keyword'
         }
     },
@@ -46,7 +46,11 @@ export default {
             var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!?,:;'/ ";
             var encryptWord = "";
             for (var i = 0;i < word.length;i++) {
-                encryptWord += alphabet.charAt((alphabet.indexOf(word.charAt(i)) + alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+                if (word[i] !== ' ') {
+                    encryptWord += alphabet.charAt((alphabet.indexOf(word.charAt(i)) + alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+                } else {
+                    encryptWord += ' ';
+                }
             }
             this.output = encryptWord;
         },
@@ -56,7 +60,11 @@ export default {
             var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!?,:;'/ ";
             var decryptWord = "";
             for (var i = 0;i < word.length;i++) {
-                decryptWord += alphabet.charAt(((alphabet.indexOf(word.charAt(i)) + alphabet.length) - alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+                if (word[i] !== ' ') {
+                    decryptWord += alphabet.charAt(((alphabet.indexOf(word.charAt(i)) + alphabet.length) - alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+                } else {
+                    decryptWord += ' ';  
+                }
             }
             this.input = decryptWord;
             }
