@@ -51,9 +51,13 @@
 
 #nav a{
   text-decoration: none;
-  color: white;
+  color: lightblue;
   font-size: 1.5em;
   text-transform: uppercase;
+}
+
+#nav a:hover {
+  opacity: 0.8;
 }
 
 .page { 
