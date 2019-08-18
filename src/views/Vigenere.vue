@@ -43,7 +43,7 @@ export default {
         encrypt() {
             let word = this.input;
             let keyword = this.key;
-            var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!?,:;'/ ";
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
             var encryptWord = "";
             for (var i = 0;i < word.length;i++) {
                 if (word[i] !== ' ') {
@@ -57,7 +57,7 @@ export default {
         decrypt() {
             let word = this.output;
             let keyword = this.key;
-            var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!?,:;'/ ";
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
             var decryptWord = "";
             for (var i = 0;i < word.length;i++) {
                 if (word[i] !== ' ') {
