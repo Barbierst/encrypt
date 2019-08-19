@@ -11,7 +11,7 @@ First described by Giovan Battista Bellaso in 1553, the cipher is easy to unders
             <div class="controls">
                     <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
                     <input type="text" v-model="key"> 
-                    <!-- <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" /> -->
+                    <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
             </div>
             <div class="output">
                 <textarea v-model="output"></textarea>
@@ -69,9 +69,39 @@ export default {
                     j = 0;
                 }
             }
-
             this.output = encrypted;
         },
+        decrypt() {
+            let toDecrypt = this.output;
+            let keyword = this.key;
+            let keyLength = keyword.length;
+            let inputLength = toDecrypt.length;
+            let decrypted = "";
+
+            for (let i = 0, j = 0; i < inputLength ; i++) {
+                let number = toDecrypt.charCodeAt(i);
+                let amount = keyword.charCodeAt(j);
+                if (toDecrypt[i] == ' ') {
+                    decrypted += ' ';
+                } else {
+                    if (number >= 97 && number <= 122) {
+                        number = (((number - 97) - (amount - 97) + 26) %26) + 97;
+                    } else if (number >= 65 && number <= 90){
+                        console.log(number);
+                        number = (((number - 65) - (amount - 97) +26 ) %26) + 65;
+                        console.log(number);
+                    }
+                    let char = String.fromCharCode(number);
+                    // console.log(char);
+                    decrypted += char;
+                    j++;
+                }
+                if (j >= keyLength) {
+                    j = 0;
+                }
+            }
+            this.input = decrypted;
+        }
         // decrypt() {
         //     let word = this.output;
         //     let keyword = this.key;
