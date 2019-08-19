@@ -47,36 +47,24 @@ export default {
             let inputLength = toEncrypt.length;
             let encrypted = "";
 
-            for (let i = 0, j = 0; i < inputLength ; i++, j++) {
+            for (let i = 0, j = 0; i < inputLength ; i++) {
                 let number = toEncrypt.charCodeAt(i);
                 let amount = keyword.charCodeAt(j);
+                if (toEncrypt[i] == ' ') {
+                    encrypted += ' ';
+                } else {
+                    if (number >= 97 && number <= 122) {
+                        number = (((number + amount) - 97)%26) + 97;
+                    } else if (number >= 65 && number <= 90){
+                        number = (((number + amount) - 65)%26) + 65;
+                    }
+                    let char = String.fromCharCode(number);
+                    console.log(char);
+                    encrypted += char;
+                    j++;
+                }
                 if (j >= keyLength) {
                     j = 0;
-                    if (toEncrypt[i] !== ' ') {
-                        if (number >= 97 && number <= 122) {
-                            number = (((number + amount) - 97)%26) + 97;
-                        } else if (number >= 65 && number <= 90){
-                            number = (((number + amount) - 65)%26) + 65;
-                        }
-                        let char = String.fromCharCode(number);
-                        encrypted += char;
-                    } else {
-                        encrypted += ' ';
-                        j--;
-                    }
-                } else {
-                    if (toEncrypt[i] !== ' ') {
-                        if (number >= 97 && number <= 122) {
-                            number = (((number + amount) - 97)%26) + 97;
-                        } else if (number >= 65 && number <= 90){
-                            number = (((number + amount) - 65)%26) + 65;
-                        }
-                        let char = String.fromCharCode(number);
-                        encrypted += char;
-                    } else {
-                        encrypted += ' ';
-                        j--;
-                    }
                 }
             }
 
