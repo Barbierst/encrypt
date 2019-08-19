@@ -11,7 +11,7 @@ First described by Giovan Battista Bellaso in 1553, the cipher is easy to unders
             <div class="controls">
                     <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
                     <input type="text" v-model="key"> 
-                    <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
+                    <!-- <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" /> -->
             </div>
             <div class="output">
                 <textarea v-model="output"></textarea>
@@ -41,33 +41,61 @@ export default {
     },
     methods: {
         encrypt() {
-            let word = this.input;
+            let toEncrypt = this.input;
             let keyword = this.key;
-            var alphabet = "abcdefghijklmnopqrstuvwxyz";
-            var encryptWord = "";
-            for (var i = 0;i < word.length;i++) {
-                if (word[i] !== ' ') {
-                    encryptWord += alphabet.charAt((alphabet.indexOf(word.charAt(i)) + alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+            let keyLength = keyword.length;
+            let inputLength = toEncrypt.length;
+            let encrypted = "";
+
+            for (let i = 0, j = 0; i < inputLength ; i++, j++) {
+                let number = toEncrypt.charCodeAt(i);
+                let amount = keyword.charCodeAt(j);
+                if (j >= keyLength) {
+                    j = 0;
+                    if (toEncrypt[i] !== ' ') {
+                        if (number >= 97 && number <= 122) {
+                            number = (((number + amount) - 97)%26) + 97;
+                        } else if (number >= 65 && number <= 90){
+                            number = (((number + amount) - 65)%26) + 65;
+                        }
+                        let char = String.fromCharCode(number);
+                        encrypted += char;
+                    } else {
+                        encrypted += ' ';
+                        j--;
+                    }
                 } else {
-                    encryptWord += ' ';
+                    if (toEncrypt[i] !== ' ') {
+                        if (number >= 97 && number <= 122) {
+                            number = (((number + amount) - 97)%26) + 97;
+                        } else if (number >= 65 && number <= 90){
+                            number = (((number + amount) - 65)%26) + 65;
+                        }
+                        let char = String.fromCharCode(number);
+                        encrypted += char;
+                    } else {
+                        encrypted += ' ';
+                        j--;
+                    }
                 }
             }
-            this.output = encryptWord;
+
+            this.output = encrypted;
         },
-        decrypt() {
-            let word = this.output;
-            let keyword = this.key;
-            var alphabet = "abcdefghijklmnopqrstuvwxyz";
-            var decryptWord = "";
-            for (var i = 0;i < word.length;i++) {
-                if (word[i] !== ' ') {
-                    decryptWord += alphabet.charAt(((alphabet.indexOf(word.charAt(i)) + alphabet.length) - alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
-                } else {
-                    decryptWord += ' ';  
-                }
-            }
-            this.input = decryptWord;
-            }
+        // decrypt() {
+        //     let word = this.output;
+        //     let keyword = this.key;
+        //     var alphabet = "abcdefghijklmnopqrstuvwxyz";
+        //     var decryptWord = "";
+        //     for (var i = 0;i < word.length;i++) {
+        //         if (word[i] !== ' ') {
+        //             decryptWord += alphabet.charAt(((alphabet.indexOf(word.charAt(i)) + alphabet.length) - alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
+        //         } else {
+        //             decryptWord += ' ';  
+        //         }
+        //     }
+        //     this.input = decryptWord;
+        //     }
     }
 }
 
