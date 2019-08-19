@@ -54,12 +54,14 @@ export default {
                     encrypted += ' ';
                 } else {
                     if (number >= 97 && number <= 122) {
-                        number = (((number + amount) - 97)%26) + 97;
+                        number = (((number - 97) + (amount - 97)) %26) + 97;
                     } else if (number >= 65 && number <= 90){
-                        number = (((number + amount) - 65)%26) + 65;
+                        console.log(number);
+                        number = (((number - 65) + (amount - 97)) %26) + 65;
+                        console.log(number);
                     }
                     let char = String.fromCharCode(number);
-                    console.log(char);
+                    // console.log(char);
                     encrypted += char;
                     j++;
                 }
