@@ -35,7 +35,7 @@ export default {
         return {
             title: 'Vigenere cypher',
             input: 'Type the text you want to encrypt',
-            output: '3CNA Kko RALK IsS KrqD RK vqmvWLH',
+            output: 'Dcna hyh divp mfx gelp hf hxgpudk',
             key: 'keyword'
         }
     },
@@ -56,12 +56,9 @@ export default {
                     if (number >= 97 && number <= 122) {
                         number = (((number - 97) + (amount - 97)) %26) + 97;
                     } else if (number >= 65 && number <= 90){
-                        console.log(number);
                         number = (((number - 65) + (amount - 97)) %26) + 65;
-                        console.log(number);
                     }
                     let char = String.fromCharCode(number);
-                    // console.log(char);
                     encrypted += char;
                     j++;
                 }
@@ -87,12 +84,9 @@ export default {
                     if (number >= 97 && number <= 122) {
                         number = (((number - 97) - (amount - 97) + 26) %26) + 97;
                     } else if (number >= 65 && number <= 90){
-                        console.log(number);
                         number = (((number - 65) - (amount - 97) +26 ) %26) + 65;
-                        console.log(number);
                     }
                     let char = String.fromCharCode(number);
-                    // console.log(char);
                     decrypted += char;
                     j++;
                 }
