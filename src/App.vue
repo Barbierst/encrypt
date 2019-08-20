@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/atbash">Atbash</router-link>
-      <router-link to="/caesar">Caesar</router-link>
-      <router-link to="/vigenere">Vigenere</router-link>
+      <div class="links">
+        <router-link to="/">Home</router-link>
+        <router-link to="/atbash">Atbash</router-link>
+        <router-link to="/caesar">Caesar</router-link>
+        <router-link to="/vigenere">Vigenere</router-link>
+      </div>
     </div>
     <div id="content">
       <transition name="router-animations" enter-active-class="animated fadeIn">  
@@ -40,13 +42,17 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background: linear-gradient(135deg, rgba(47,47,47,1) 0%, rgba(55,55,55,1) 100%);
+  background: linear-gradient(90deg, rgba(47,47,47,1) 0%, rgba(55,55,55,1) 100%);
   -webkit-box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
   -moz-box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
   box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
 }
 
 #nav a{
@@ -54,10 +60,14 @@
   color: lightblue;
   font-size: 1.5em;
   text-transform: uppercase;
+  transition: 0.4s ease-in;
 }
 
 #nav a:hover {
   opacity: 0.8;
+  color: rgba(65,65,65,1); 
+  background: lightblue;
+  border-left: 5px solid white;
 }
 
 .page { 
