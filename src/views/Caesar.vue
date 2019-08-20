@@ -90,7 +90,7 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: 3em;
+    font-size: 5em;
 }
 
 textarea {
@@ -110,7 +110,7 @@ textarea {
 }
 
 input {
-    font-size:1.2em;
+    font-size: 0.7em;
     font-family: monospace;
     border: none;
     outline: none;

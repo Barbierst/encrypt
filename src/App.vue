@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/atbash">Atbash</router-link>
       <router-link to="/caesar">Caesar</router-link>
       <router-link to="/vigenere">Vigenere</router-link>
     </div>
