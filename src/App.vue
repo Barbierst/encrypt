@@ -66,7 +66,7 @@
   height: 100vh;
   margin-left: 10vw;
   width: 90vw;
-  background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(230,230,230,1) 100%);
+  background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 h1 {

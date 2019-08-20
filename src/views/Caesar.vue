@@ -8,7 +8,7 @@
             </div>
             <div class="controls">
                     <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
-                    <input type="number" min="0" max="15" v-model="key"> 
+                    <input type="number" min="0" max="15" v-model="key" > 
                     <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
             </div>
             <div class="output">
@@ -100,22 +100,27 @@ textarea {
     padding: 10px;
     background:white;
     border: none;
-    border-radius: 0 0 10% 0;
+    border-radius: 0 0 0% 0;
     outline: none;
     resize: none;
-    -webkit-box-shadow: inset 2px 2px 4px 0px rgba(186,186,186,1);
-    -moz-box-shadow: inset 2px 2px 4px 0px rgba(186,186,186,1);
-    box-shadow: inset 2px 2px 4px 0px rgba(186,186,186,1);
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 }
 
 input {
     font-size:1.2em;
+    font-family: monospace;
     border: none;
     outline: none;
     resize: none;
     width: 3vw;
-    border-radius: 30%;
     text-align: center;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 }
 
 svg:hover {
