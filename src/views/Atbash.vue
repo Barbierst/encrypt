@@ -32,13 +32,13 @@ export default {
   data() {
     return {
       title: 'Atbash',
-      input: 'test',
-      output: 'test1'
+      input: 'Type the text you want to encrypt',
+      output: 'gbkv gsv gvcg blf dzmg gl vmxibkg'
     }
   },
   methods: {
     encrypt() {
-      let toEncrypt = this.input;
+      let toEncrypt = this.input.toLowerCase();
       let encrypted = '';
       let alphabet = 'abcdefghijklmnopqrstuvwxyz';
       let alphabetReverse = 'zyxwvutsrqponmlkjihgfedcba';
