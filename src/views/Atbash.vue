@@ -9,7 +9,7 @@ Due to the fact that there is only one way to perform this, the Atbash cipher pr
             </div>
             <div class="controls">
                     <font-awesome-icon :icon="['fas', 'lock']" @click="encrypt"/>
-                    <!-- <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" /> -->
+                    <font-awesome-icon :icon="['fas', 'unlock']" @click="decrypt" />
             </div>
             <div class="output">
                 <textarea v-model="output"></textarea>
@@ -49,13 +49,32 @@ export default {
           let char = toEncrypt[i];
           let indexChar = alphabet.indexOf(char);
           let encryptChar = alphabetReverse[indexChar];
-          console.log(encryptChar);
           encrypted += encryptChar; 
         } else {
           encrypted += ' ';
         }
       }
       this.output = encrypted;
+    },
+    decrypt() {
+      let toEncrypt = this.output;
+      let encrypted = '';
+      let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+      let alphabetReverse = 'zyxwvutsrqponmlkjihgfedcba';
+      let toEcryptLength = toEncrypt.length;
+
+      for(let i = 0; i < toEcryptLength; i++) {
+        if (toEncrypt[i] !== ' ') {
+          let char = toEncrypt[i];
+          let indexChar = alphabetReverse.indexOf(char);
+          let encryptChar = alphabet[indexChar];
+          encrypted += encryptChar; 
+        } else {
+          encrypted += ' ';
+        }
+      }
+      this.input = encrypted;
+
     }
   }
   
