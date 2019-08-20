@@ -70,6 +70,13 @@
   border-left: 5px solid white;
 }
 
+.router-link-active {
+  opacity: 0.8;
+  color: rgba(65,65,65,1)!important;
+  background: lightblue;
+  border-left: 5px solid white;
+}
+
 .page { 
   padding: 5vh;
   position: fixed;
