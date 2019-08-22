@@ -1,6 +1,7 @@
 <template>
     <div id="nav-trgt">
         <h3>Made by: <a href="https://www.trgt.nl" target="_blank">TRGT</a></h3>
+
     </div>
 </template>
 
@@ -21,4 +22,5 @@ export default {
 #nav-trgt a:hover {
     color: black;
 }
+
 </style>
