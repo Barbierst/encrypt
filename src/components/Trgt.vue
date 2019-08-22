@@ -17,6 +17,7 @@ export default {
     color:lightblue;
     opacity: 0.8;
     text-transform: lowercase;
+    margin-bottom: 20px;
 }
 
 #nav-trgt a:hover {

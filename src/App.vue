@@ -56,11 +56,11 @@ export default {
   margin: 0;
   position: fixed;
   z-index: 1;
-  width: 20%;
+  width: 17%;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background: linear-gradient(90deg, rgba(47,47,47,1) 0%, rgba(55,55,55,1) 100%);
+  background: linear-gradient(90deg, rgba(70,70,70,1) 0%, rgba(85,85,85,1) 100%);
   -webkit-box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
   -moz-box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
   box-shadow: 2px 0px 7px 0px rgba(115,114,115,1);
@@ -97,9 +97,9 @@ export default {
 
 .footer{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   height: 40vh;
-  justify-content: flex-start;
+  justify-content: flex-end;
   max-width: 100%;
 
 }
@@ -108,8 +108,8 @@ export default {
   padding: 5vh;
   position: fixed;
   height: 100vh;
-  margin-left: 20vw;
-  width: 80%;
+  margin-left: 17vw;
+  width: 83%;
   background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
 }
 
