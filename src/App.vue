@@ -7,6 +7,9 @@
         <router-link to="/caesar">Caesar</router-link>
         <router-link to="/vigenere">Vigenere</router-link>
       </div>
+      <div class="footer">
+        <Trgt />
+      </div>
     </div>
     <div id="content">
       <transition name="router-animations" enter-active-class="animated fadeIn">  
@@ -15,6 +18,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import Trgt from './components/Trgt';
+
+export default {
+  name: 'App',
+  components: {
+    Trgt
+  } 
+  
+}
+</script>
 
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css";
@@ -75,6 +90,15 @@
   color: rgba(65,65,65,1)!important;
   background: lightblue;
   border-left: 5px solid white;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column-reverse;
+  height: 40vh;
+  justify-content: flex-start;
+  max-width: 100%;
+
 }
 
 .page { 
