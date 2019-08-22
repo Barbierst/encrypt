@@ -9,6 +9,7 @@
       </div>
       <div class="footer">
         <Trgt />
+        <Socials />
       </div>
     </div>
     <div id="content">
@@ -21,11 +22,13 @@
 
 <script>
 import Trgt from './components/Trgt';
+import Socials from './components/Socials';
 
 export default {
   name: 'App',
   components: {
-    Trgt
+    Trgt,
+    Socials
   } 
   
 }
@@ -53,7 +56,7 @@ export default {
   margin: 0;
   position: fixed;
   z-index: 1;
-  width: 10vw;
+  width: 20%;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -105,8 +108,8 @@ export default {
   padding: 5vh;
   position: fixed;
   height: 100vh;
-  margin-left: 10vw;
-  width: 90vw;
+  margin-left: 20vw;
+  width: 80%;
   background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
 }
 
