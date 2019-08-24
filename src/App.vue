@@ -117,5 +117,10 @@ h1 {
   margin: 20px;
 }
 
+svg {
+    height: 100%;
+    width: auto;
+}
+
 
 </style>

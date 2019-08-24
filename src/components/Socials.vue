@@ -26,12 +26,9 @@ export default {
 }
 
 #socials a {
+    height:100%;
     color: lightblue;
     height: 40%;
 }
 
-svg {
-    height: 100%;
-    width: auto;
-}
 </style>

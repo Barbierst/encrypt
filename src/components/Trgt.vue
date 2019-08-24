@@ -13,15 +13,11 @@ export default {
 
 <style scoped>
 #nav-trgt a, h3{
-    font-size: 15px;
     color:lightblue;
     opacity: 0.8;
     text-transform: lowercase;
     margin-bottom: 20px;
 }
 
-#nav-trgt a:hover {
-    color: black;
-}
 
 </style>
