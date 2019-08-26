@@ -17,7 +17,6 @@ export default {
 
 <style scoped>
 #socials {
-    height: 40%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -26,9 +25,8 @@ export default {
 }
 
 #socials a {
-    height:100%;
+    height: 100%;
     color: lightblue;
-    height: 40%;
 }
 
 </style>

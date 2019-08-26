@@ -96,20 +96,6 @@ export default {
             }
             this.input = decrypted;
         }
-        // decrypt() {
-        //     let word = this.output;
-        //     let keyword = this.key;
-        //     var alphabet = "abcdefghijklmnopqrstuvwxyz";
-        //     var decryptWord = "";
-        //     for (var i = 0;i < word.length;i++) {
-        //         if (word[i] !== ' ') {
-        //             decryptWord += alphabet.charAt(((alphabet.indexOf(word.charAt(i)) + alphabet.length) - alphabet.indexOf(keyword.charAt(i % keyword.length))) % alphabet.length);
-        //         } else {
-        //             decryptWord += ' ';  
-        //         }
-        //     }
-        //     this.input = decryptWord;
-        //     }
     }
 }
 

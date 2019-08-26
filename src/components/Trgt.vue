@@ -17,6 +17,10 @@ export default {
     opacity: 0.8;
     text-transform: lowercase;
     margin-bottom: 20px;
+    font-size:1rem;
+}
+h3 {
+    font-size: 1rem;
 }
 
 
