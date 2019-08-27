@@ -2,7 +2,7 @@
     <div class="page">
         <h1> {{title}}</h1>
         <p><i>In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</i> - <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">Wikipedia</a></p>
-        <div id="ceasar">
+        <div class="cipher">
             <div class="input">
                 <textarea v-model="input"></textarea>
             </div>
@@ -79,60 +79,11 @@ export default {
 
 <style scoped>
 
-#ceasar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 5em;
-}
-
-textarea {
-    width: 25vw;
-    height: 50vh;
-    font-size: 1.3em;
-    padding: 10px;
-    background:white;
-    border: none;
-    border-radius: 0 0 0% 0;
-    outline: none;
-    resize: none;
-    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-}
 
 input {
-    font-size: 0.7em;
-    font-family: monospace;
-    border: none;
-    outline: none;
-    resize: none;
     width: 3vw;
-    text-align: center;
-    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 }
 
-svg:hover {
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-p {
-    max-width: 50vw;
-    margin: auto;
-    padding: 50px;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -143,6 +94,12 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+@media screen and (max-width: 900px) { 
+    input {
+        width: 7vw;
+    }
 }
 
 

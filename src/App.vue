@@ -45,11 +45,12 @@ export default {
 
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2c2c2c;
+  overflow-x: hidden;
 }
 
 #nav { 
@@ -106,11 +107,10 @@ export default {
 
 .page { 
   padding: 5vh;
-  position: fixed;
-  height: 100vh;
+  min-height: 100vh;
   margin-left: 17vw;
   width: 83%;
-  background: linear-gradient(135deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+  background:linear-gradient(45deg, rgb(173, 216, 230), rgb(165, 205, 225) );
 }
 
 h1 {
@@ -121,6 +121,112 @@ svg {
     height: 100%;
     width: auto;
 }
+
+svg:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+p {
+    max-width: 50vw;
+    margin: auto;
+    padding: 50px;
+}
+
+.cipher {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+textarea {
+    width: 25vw;
+    height: 50vh;
+    font-size: 1.3em;
+    padding: 10px;
+    background:white;
+    border: none;
+    border-radius: 0 0 0% 0;
+    outline: none;
+    resize: none;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    /* background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png); */
+}
+
+input {
+    font-size:0.5em;
+    font-family: monospace;
+    border: none;
+    outline: none;
+    resize: none;
+    text-align: center;
+    width: 10vw;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 5em;
+}
+
+
+@media screen and (max-width: 900px) {
+  h1 {
+    margin: 0;
+  }
+
+  #nav { 
+    width: 100%;
+    height: 10vh;
+  }
+  #nav .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+  }
+  #nav a {
+    margin-top: 3%;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .page {
+    margin-top: 10vh;
+    padding: 5vh;
+    min-height: 100vh;
+    margin-left: 0vw;
+    width: 100%;
+  }
+
+  p {
+    max-width: 100vw;
+  }
+
+  .cipher {
+    flex-direction: column;
+  }
+
+  textarea {
+    width: 70vw;
+  }
+
+  .controls {
+    margin: 20px;
+    flex-direction: row;
+  }
+
+}
+  
 
 
 </style>

@@ -17,11 +17,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-p {
-  max-width: 60vw;
-  margin: auto;
-}
-
 ul {
   list-style-type: none;
   padding: 0;

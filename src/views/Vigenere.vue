@@ -4,7 +4,7 @@
         <p><i>The Vigenère cipher (French pronunciation: ​[viʒnɛːʁ]) is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It employs a form of polyalphabetic substitution.<br/><br/>
 
 First described by Giovan Battista Bellaso in 1553, the cipher is easy to understand and implement, but it resisted all attempts to break it until 1863, three centuries later. This earned it the description le chiffre indéchiffrable (French for 'the indecipherable cipher'). Many people have tried to implement encryption schemes that are essentially Vigenère ciphers.[3] In 1863, Friedrich Kasiski was the first to publish a general method of deciphering Vigenère ciphers.</i> - <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" target="_blank">Wikipedia</a></p>
-        <div id="vigenere">
+        <div class="cipher">
             <div class="input">
                 <textarea v-model="input"></textarea>
             </div>
@@ -104,63 +104,22 @@ export default {
 
 <style scoped>
 
-#vigenere {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 5em;
-}
-
-textarea {
-    width: 25vw;
-    height: 45vh;
-    font-size: 1.3em;
-    padding: 10px;
-    background:white;
-    border: none;
-    border-radius: 0 0 0 0;
-    outline: none;
-    resize: none;
-    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-}
 
 input {
-    font-size:0.5em;
-    font-family: monospace;
-    border: none;
-    outline: none;
-    resize: none;
-    text-align: center;
     width: 10vw;
-    -webkit-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    -moz-box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    box-shadow: 2px 2px 2px 0px rgba(186,186,186,1);
-    background-image:url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-}
-
-svg:hover {
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-p {
-    max-width: 50vw;
-    margin: auto;
-    padding: 50px;
 }
 
 
-
+@media screen and (max-width: 900px) { 
+    .controls {
+        flex-direction: column;
+        margin: 20px;
+    }
+    input {
+        width: 70vw;
+        margin: 20px;
+    }
+}
 
 </style>
 
