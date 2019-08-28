@@ -118,7 +118,7 @@ h1 {
 }
 
 svg {
-    height: 100%;
+    height: 6vh;
     width: auto;
 }
 
